@@ -69,7 +69,7 @@
     const b = parseFloat(bInput.value);
 
     try {
-      const response = await fetch(`https://calculadora-microservicos.vercel.app/api/calculate/soma/${a}/${b}`, {
+      const response = await fetch(`/api/${operation}/${a}/${b}`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
       });
