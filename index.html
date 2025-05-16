@@ -54,7 +54,7 @@
     resultDiv.textContent = '';
     errorDiv.textContent = '';
     const operation = operationSelect.value;
-    alert(operation);
+    
     const a = parseFloat(document.getElementById('a').value);
     const b = parseFloat(bInput.value);
 
@@ -66,7 +66,7 @@
       });
 
       const data = await response.json();
-
+      alert(operation);
       if (response.ok) {
         resultDiv.textContent = 'Resultado: ' + (data.result ?? JSON.stringify(data));
       } else {
