@@ -49,27 +49,17 @@
     const bInput = document.getElementById('b');
     const operationSelect = document.getElementById('operation');
 
-    function updateBField() {
-      if (operationSelect.value === 'sqrt') {
-        bInput.disabled = true;
-        bInput.value = '';
-      } else {
-        bInput.disabled = false;
-      }
-    }
-    operationSelect.addEventListener('change', updateBField);
-    updateBField();
-
     form.addEventListener('submit', async (e) => {
     e.preventDefault();
     resultDiv.textContent = '';
     errorDiv.textContent = '';
     const operation = operationSelect.value;
+    alert(operation);
     const a = parseFloat(document.getElementById('a').value);
     const b = parseFloat(bInput.value);
 
     try {
-      const response = await fetch(`/api/soma/`, {
+      const response = await fetch(`/api/${operation}/`, {
         method: 'POST',
         body: JSON.stringify({ a, b }),
         headers: { 'Content-Type': 'application/json' }
