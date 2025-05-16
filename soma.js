@@ -1,7 +1,7 @@
 module.exports = (req, res) => {
   // Configurando CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+  res.setHeader('Access-Control-Allow-Methods', 'POST');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   // Handle pre-flight requests
@@ -9,12 +9,7 @@ module.exports = (req, res) => {
     return res.status(200).end();
   }
 
-  // Rota de teste GET
-  if (req.method === 'GET') {
-    return res.status(200).json({ message: 'servidor online' });
-  }
-
-  // Verificar método HTTP para POST
+  // Permitir apenas POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Método não permitido' });
   }
@@ -28,5 +23,5 @@ module.exports = (req, res) => {
   }
 
   // Calcular e retornar o resultado
-  res.status(200).json({ result: a / b });
+  res.status(200).json({ result: a + b });
 };
