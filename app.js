@@ -16,13 +16,6 @@ process.on('unhandledRejection', (reason, promise) => {
   console.error('Unhandled Rejection at:', promise, 'reason:', reason);
 });
 
-const PORT = process.env.PORT || 3000; // Porta para o orquestrador
-
-app.listen(PORT, () => {
-  console.log(`Orquestrador rodando na porta ${PORT}`);
-  console.log(`Acesse POST http://localhost:${PORT}/calculate`);
-});
-
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend.html'));
 });
