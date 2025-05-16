@@ -1,5 +1,5 @@
 export default function handler(req, res) {
-  const { a, b } = req.params;
+  const { a, b } = req.query;
   if (isNaN(a) || isNaN(b)) {
     return res.status(400).json({ error: 'Parâmetros inválidos' });
   }
