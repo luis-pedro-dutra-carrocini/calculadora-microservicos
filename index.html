@@ -151,13 +151,13 @@
           headers: { 'Content-Type': 'application/json' }
         });
       }else if (operation === "subtracao"){
-        response = await fetch(`urlDaAplicação`, {
+        response = await fetch(`/api/subtracao/`, {
           method: 'POST',
           body: JSON.stringify({ a, b }),
           headers: { 'Content-Type': 'application/json' }
         });
       }else if (operation === "multiplicacao"){
-        response = await fetch(`urlDaAplicação`, {
+        response = await fetch(`/api/multiplicacao/`, {
           method: 'POST',
           body: JSON.stringify({ a, b }),
           headers: { 'Content-Type': 'application/json' }
