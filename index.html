@@ -157,7 +157,7 @@
           headers: { 'Content-Type': 'application/json' }
         });
       }else if (operation === "multiplicacao"){
-        response = await fetch(`/api/multiplicacao/`, {
+        response = await fetch(`https://microserviso-calculadora-operacao-multiplicacao.vercel.app/api/multiplicacao`, {
           method: 'POST',
           body: JSON.stringify({ a, b }),
           headers: { 'Content-Type': 'application/json' }
